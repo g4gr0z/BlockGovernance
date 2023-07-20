@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -18,19 +19,34 @@ export default function Profile() {
     setAmount(e.target.value);
   };
   return (
-    <>
-      <Header />
-      <div>
-        <h4>{companyName}</h4>
-        <Vote />
+    <div className="homemain">
+      <div className="homeheader">
+        <button className="homeheaderbutton">
+          <Header />
+        </button>
+        <button class="button-30">0x2g4dd..</button>
       </div>
+      <div className="companyname">{companyName}</div>
+      <div className="profile">
+        <div className="profilevote">
+          <Vote />
+          <Vote />
+          <Vote />
+        </div>
 
-      <div>
-        <h2>purchase token</h2>
-        <input onChange={handleAmountChange} type="number" min="0" />
-        <button>buy</button>
+        <div>
+          <div className="purchasetoken">
+            <h2>purchase token</h2>
+            <input onChange={handleAmountChange} type="number" min="0" />
+            <button class="button-40">buy</button>
+          </div>
+        </div>
       </div>
-      <button onClick={() => navigate(-1)}>go back</button>
-    </>
+      <div className="gobackbutton">
+        <button class="button-30" onClick={() => navigate(-1)}>
+          go back
+        </button>
+      </div>
+    </div>
   );
 }

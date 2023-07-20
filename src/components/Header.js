@@ -1,3 +1,4 @@
+import "../App.css";
 export default function Header() {
-  return <h1>BlockGovernance</h1>;
+  return <div className="header">BlockGovernance</div>;
 }
