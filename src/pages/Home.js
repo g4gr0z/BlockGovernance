@@ -7,14 +7,29 @@ export default function Home() {
   const navigate = useNavigate();
 
   const [companyName, setCompanyName] = useState("");
+  const [CompanyAbout, setCompanyAbout] = useState("");
+  const [amount, setAmount] = useState();
 
+  const handleAmountChange = (e) => {
+    console.log(e.target.value);
+    setAmount(e.target.value);
+  };
+  const handleCompanyAbout = (e) => {
+    console.log(e.target.value);
+    setCompanyAbout(e.target.value);
+  };
   const handleCompanyNameChange = (e) => {
     console.log(e.target.value);
     setCompanyName(e.target.value);
   };
 
   const handleCreateButtonClick = () => {
-    navigate(`/Profile?companyName=${encodeURIComponent(companyName)}`);
+    const queryParams = new URLSearchParams();
+    queryParams.append("companyName", companyName);
+    queryParams.append("CompanyAbout", CompanyAbout);
+    queryParams.append("votecost", amount);
+
+    navigate(`/Profile?${queryParams.toString()}`);
   };
   return (
     <div>
@@ -32,8 +47,17 @@ export default function Home() {
             onChange={handleCompanyNameChange}
             placeholder="Company's Name"
           />
-          <input type="text" placeholder="Other details" />
-          <input type="text" placeholder="Other details" />
+          <input
+            type="text"
+            onChange={handleCompanyAbout}
+            placeholder="About Company "
+          />
+          <input
+            onChange={handleAmountChange}
+            type="number"
+            min="0"
+            placeholder="Enter the cost of vote"
+          />
 
           <button class="button-30" onClick={handleCreateButtonClick}>
             Create
