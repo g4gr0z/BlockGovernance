@@ -33,7 +33,7 @@ export default function Home() {
   };
   return (
     <div>
-      <div className="homeheader">
+      <div className="introheader1">
         <button className="homeheaderbutton" onClick={() => navigate(-1)}>
           <Header />
         </button>
@@ -43,16 +43,26 @@ export default function Home() {
         <p> Create your governance mechanism in minutes</p>
         <div className="homeform">
           <input
+            className="homeforminput"
             type="text"
             onChange={handleCompanyNameChange}
             placeholder="Company's Name"
           />
-          <input
+          <textarea
+            rows={4}
+            class="homeforminput"
+            type="text"
+            onChange={handleCompanyAbout}
+            placeholder="About the Company "
+          ></textarea>
+          {/* <input
+            className="homeforminput"
             type="text"
             onChange={handleCompanyAbout}
             placeholder="About Company "
-          />
+          /> */}
           <input
+            className="homeforminput"
             onChange={handleAmountChange}
             type="number"
             min="0"

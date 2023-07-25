@@ -49,12 +49,13 @@ export default function Profile() {
     }
   };
   return (
-    <div className="homemain">
+    // <div className="homemain">
+    <div>
       <div className="homeheader">
         <button className="homeheaderbutton">
           <Header />
         </button>
-        <h1 className="companynameheader">{companyName}</h1>
+        <h3 className="companynameheader">{companyName}</h3>
 
         <button class="button-30">0x2g4dd..</button>
       </div>
@@ -94,10 +95,19 @@ export default function Profile() {
             <input
               onChange={handleHeadlineChange}
               type="text"
+              className="homeforminput"
               placeholder="Enter Headline"
             />
             <p>Enter the vote description :</p>
-            <input onChange={handleAboutChange} type="text" />
+
+            <textarea
+              rows={4}
+              class="homeforminput"
+              type="text"
+              onChange={handleAboutChange}
+              placeholder="Description for the vote"
+            ></textarea>
+
             {/* <input onChange={handleAmountChange} type="number" min="0" /> */}
             <p>Enter company's logo :</p>
             <input

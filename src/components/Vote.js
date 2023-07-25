@@ -42,9 +42,6 @@ export default function Vote({ headline, about, image }) {
               <div class="progress">vote %</div>
             </div>
             <div className="profilevoteright">
-              {imageUrl && (
-                <img className="voteimage" src={imageUrl} alt="Profile" />
-              )}
               <p>Voted Successfully</p>
               <p>You voted {voteChoice}</p>
             </div>
@@ -60,9 +57,6 @@ export default function Vote({ headline, about, image }) {
               <div class="progress">vote %</div>
             </div>
             <div className="profilevoteright">
-              {imageUrl && (
-                <img className="voteimage" src={imageUrl} alt="Profile" />
-              )}
               {voting && (
                 <>
                   <label class="switch">

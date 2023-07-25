@@ -9,7 +9,18 @@ export default function Intro() {
 
   return (
     <div>
-      <Header />
+      <div className="introheader1">
+        <Header />
+        <div className="introbuttondiv">
+          <button
+            class="button-30"
+            onClick={() => navigate("/Home")}
+            role="button"
+          >
+            Launch Dapp
+          </button>
+        </div>
+      </div>
 
       <div className="Intro">
         <div className="introabout">
@@ -26,17 +37,6 @@ export default function Intro() {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </h4>
-        </div>
-
-        <div className="introbuttondiv">
-          <p>Proceed to project :</p>
-          <button
-            class="button-30"
-            onClick={() => navigate("/Home")}
-            role="button"
-          >
-            BlockGovernance
-          </button>
         </div>
       </div>
 
